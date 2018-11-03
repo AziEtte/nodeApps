@@ -13,7 +13,12 @@ app.get('/',function(req,res){
 });
 
 app.get('/about', function(req, res){
+	console.log('about');
 	res.send('About Us!');
+});
+
+app.get('/about/directions', function(req, res){
+	res.send('How to Find Us!');
 });
 
 app.use(function(req, res){
