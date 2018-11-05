@@ -14,10 +14,6 @@ module.exports = function(grunt) {
     grunt.registerTask('default',  [
         'nodemon'
       ]);
-       grunt.registerTask('production',  [
-        
-        'nodemon'
-      ]);
-  
+       
 };
 
