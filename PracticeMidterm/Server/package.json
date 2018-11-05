@@ -9,9 +9,13 @@
   "author": "Azita Ettehad",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "grunt": "^1.0.3",
     "grunt-contrib-nodemon": "^0.5.4",
-    "nodemon": "^1.18.5"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.5",
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.4.1"
   }
 }
