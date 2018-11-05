@@ -12,13 +12,14 @@ module.exports = function (app, config) {
 
   app.use(morgan('dev'));
 
+  app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
     extended: true
   }));
 
   app.use(express.static(config.root + '/public'));
 
-  require('../app/controllers/users')(app, config);
+  require('../app/controllers/todo')(app, config);
 
 
   app.use(function (req, res) {
