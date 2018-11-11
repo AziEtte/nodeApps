@@ -2,11 +2,11 @@ var Mongoose = require('mongoose');
 var Schema = Mongoose.Schema;
 
 var todoSchema = new Schema({
-    ToDo: { type: String, required:true},
+    todo: { type: String, required:true},
     Priority: { type: String, required:true},
-    DueDate: { type: Date, default: Date.now }
+    DueDate: { type: Date }
   });
   
 
-module.exports =  Mongoose.model('todo', todoSchema);
+module.exports =  Mongoose.model('Todo', todoSchema);
 

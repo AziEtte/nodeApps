@@ -9,17 +9,22 @@ var config = {
                   // app: {      name: 'NodeApps/PracticeMidterm'    },    
                   // port: 3300,  
         //},  
-
         NODEMON: {    
             root: rootPath,    
             app: { name: 'NodeApps/PracticeMidterm' },    
-            port: 3300,  
+            port: 3300, 
+            db: 'mongodb://127.0.0.1'
+        
+         
         },
+
 
         test: {
             root: rootPath,
             app: { name: 'NodeApps/PracticeMidterm' },
             port: 3300,
+            db: 'mongodb://127.0.0.1/test'
+        
             }
             
         //production: {    
