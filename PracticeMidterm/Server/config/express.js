@@ -4,7 +4,7 @@ var logger = require('./logger')
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var bluebird = require('bluebird');
-var glob= require('glob');
+//var glob= require('glob');
 
 
 module.exports = function (app, config) {
@@ -13,7 +13,7 @@ module.exports = function (app, config) {
   mongoose.Promise = bluebird;
   mongoose.connect(config.db);
   var db = mongoose.connection;
-  db.on('error', function () { 
+  db.on('error', function () {
     throw new Error('unable to connect to database at ' + config.db);
   });
 
@@ -39,23 +39,18 @@ module.exports = function (app, config) {
 
   app.use(express.static(config.root + '/public'));
 
-  var models = glob.sync(config.root + '/app/models/*.js');
-  models.forEach(function (model) {
-    require(model);
-  });
+  //   var models = glob.sync(config.root + '/app/models/*.js');
+  //   models.forEach(function (model) {
+  //     require(model);
+  //   });
 
-var controllers = glob.sync(config.root + '/app/controllers/*.js');
-  controllers.forEach(function (controller) {
-    require(controller) (app, config);
-  });
+  // var controllers = glob.sync(config.root + '/app/controllers/*.js');
+  //   controllers.forEach(function (controller) {
+  //     require(controller) (app, config);
+  //   });
 
-
-
-  // app.get('/api/todo', function (req, res) {
-  //   res.status(200).json(todo);
-  // });
-
-  //require('../app/controllers/todos')(app, config);
+  require('../app/models/todos');
+  require('../app/controllers/todos')(app, config);
 
 
   app.use(function (req, res) {

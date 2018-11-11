@@ -13,11 +13,10 @@ var config = {
             root: rootPath,    
             app: { name: 'NodeApps/PracticeMidterm' },    
             port: 3300, 
-            db: 'mongodb://127.0.0.1'
+            db: 'mongodb://127.0.0.1/todos'
         
          
         },
-
 
         test: {
             root: rootPath,
