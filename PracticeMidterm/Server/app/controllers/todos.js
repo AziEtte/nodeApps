@@ -1,11 +1,11 @@
-import { Schema } from 'mongoose';
+//import { Schema } from 'mongoose';
 
 
 var express = require('express'),
     router = express.Router(),
     logger = require('../../config/logger'),
     mongoose = require('mongoose');
-    Todo = mongoose.model('Todo', todoSchema);
+    Todo = mongoose.model('Todo');
 
 module.exports = function (app, config) {
     app.use('/api', router);
@@ -35,8 +35,6 @@ module.exports = function (app, config) {
         
         res.status(201).json(obj);
     });
-
-
 
 }; 
 

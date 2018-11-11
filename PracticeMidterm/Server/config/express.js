@@ -4,6 +4,7 @@ var logger = require('./logger')
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var bluebird = require('bluebird');
+//var glob= require('glob');
 
 
 module.exports = function (app, config) {
@@ -38,10 +39,16 @@ module.exports = function (app, config) {
 
   app.use(express.static(config.root + '/public'));
 
-  // var todo = [{ ToDo: 'carwash', priority: 'Imidiate' },
-  // { ToDo: 'Walking', priority: 'Imidiate' }
+//   var models = glob.sync(config.root + '/app/models/*.js');
+//   models.forEach(function (model) {
+//     require(model);
+//   });
 
-  // ];
+// var controllers = glob.sync(config.root + '/app/controllers/*.js');
+//   controllers.forEach(function (controller) {
+//     require(controller) (app, config);
+//   });
+
 
   // app.get('/api/todo', function (req, res) {
   //   res.status(200).json(todo);
