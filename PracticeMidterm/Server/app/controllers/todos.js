@@ -6,6 +6,8 @@ var express = require('express'),
     logger = require('../../config/logger'),
     mongoose = require('mongoose');
     Todo = mongoose.model('Todo');
+    asyncHandler = require('express-async-handler');
+
 
 module.exports = function (app, config) {
     app.use('/api', router);
@@ -21,20 +23,15 @@ module.exports = function (app, config) {
         res.status(200).json({ message: 'Get todo ' + req.params.id });
     });
 
-    router.route('/todos').post(function (req, res, next) {
-        logger.log('info', 'Create todo');
+    router.post('/todos', asyncHandler(async (req, res) => {
+        logger.log('info', 'Creating todo');
         var todo = new Todo(req.body);
-        todo.save()
-        .then(result => {
-            res.status(201).json(result);
-        })
-        .catch(err =>{
-           return next(err);
-        });
-  
-        
-        res.status(201).json(obj);
-    });
+        await todo.save()
+            .then(result => {
+                res.status(201).json(result);
+            })
+               }));
 
-}; 
+
+};
 
