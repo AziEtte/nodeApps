@@ -56,7 +56,7 @@ module.exports = function (app, config) {
 
     router.route('/login').post(function(req, res, next){
         console.log(req.body);
-        var email = req.body.email
+        var email = req.body.email;
         var password = req.body.password;
   
         var obj = {'email' : email, 'password' : password};
