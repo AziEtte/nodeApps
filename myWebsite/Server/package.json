@@ -1,0 +1,19 @@
+{
+  "name": "mywebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "author": "Azita Ettehad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "grunt": "^1.0.3",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-nodemon": "^0.5.4",
+    "grunt-env": "^0.4.4",
+    "nodemon": "^1.18.6"
+  }
+}
