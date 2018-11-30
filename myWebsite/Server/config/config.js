@@ -14,7 +14,7 @@ var config = {
         test: {
             root: rootPath,
             app: { name: 'NodeApps/myWebsite' },
-            port: 5000,
+            port: 4000,
             db: 'mongodb://127.0.0.1/helpMe-test'
         
             },

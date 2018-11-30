@@ -1,6 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
-var logger = require('./logger')
+var logger = require('./logger');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var bluebird = require('bluebird');
@@ -54,7 +54,7 @@ module.exports = function (app, config) {
 
 
   app.use(function (req, res) {
-    logger.log('error', ' File not found')
+    logger.log('error', ' File not found');
     res.type('text/plan');
     res.status(404);
     res.send('404 Not Found');
