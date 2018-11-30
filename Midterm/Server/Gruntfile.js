@@ -29,5 +29,4 @@ module.exports = function (grunt) {
         'env:production',
         'nodemon'
     ]);
-
 };
