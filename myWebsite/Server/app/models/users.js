@@ -8,6 +8,6 @@ var userSchema = new Schema({
   });
   
 
-module.exports =  Mongoose.model('User', userSchema);
+module.exports =  Mongoose.model('User', userSchema); 
 
 
