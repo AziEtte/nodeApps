@@ -97,7 +97,7 @@ router.get('/helpTicketsContents', asyncHandler(async (req, res) => {
 
 
 router.get('/helpTicketContents/helpTicket/:id', asyncHandler(async (req, res) => {
-    logger.log('info', 'Getting a HelpTicketContent');
+    logger.log('info', 'Getting a HelpTicket Content');
     let query = HelpTicketContent.find({helpTicketId: req.params.id});
     await query.exec().then(result => {
         res.status(200).json(result);
@@ -110,7 +110,21 @@ router.post('/helpTicketContents', asyncHandler(async (req, res) => {
     const result=await helpTicketContent.save()
             res.status(201).json(result);
 }));
-     
+ 
+router.post('/helpTicketContents/helpTicket/:id', asyncHandler(async (req, res) => {
+    logger.log('info', ' Upload a file for a specific HelpTicket Content');
+    var helpTicketContent = new HelpTicketContent(req.body);
+    await helpTicketContent.save()
+        .then(result => {
+            req.body.content.helpTicketId = result._id;
+                var helpTicketContent = new HelpTicketContent(req.body.content);
+                helpTicketContent.save()
+                    .then(content => {
+            res.status(201).json(result);
+                })
+        })
+}));
+
 // router.post('/helpTicketContents', asyncHandler(async (req, res) => {
 //     logger.log('info', ' Upload a file for a specific HelpTicket Content');
 //     await HelpTicketCotent.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })

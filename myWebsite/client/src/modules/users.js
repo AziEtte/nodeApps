@@ -14,6 +14,15 @@ export class Users {
 		this.showUserEditForm = false;
 	}
 
+	async activate() {
+		await this.getUsers();
+	}
+
+	async getUsers() {
+		await this.users.getUsers();
+	}
+
+
 	newUser() {
 		this.user = {
 			firstName: "",
