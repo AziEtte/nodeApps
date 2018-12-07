@@ -11,6 +11,7 @@ module.exports = function (app, config) {
 
   logger.log('info', "Loading Mongoose functionality");
   mongoose.Promise = bluebird;
+  console.log(config.db)
   mongoose.connect(config.db);
   var db = mongoose.connection;
   db.on('error', function () {
