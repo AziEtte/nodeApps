@@ -18,6 +18,10 @@ export class Users {
 		await this.getUsers();
 	}
 
+	attached(){
+		feather.replace()
+	}
+	
 	async getUsers() {
 		await this.users.getUsers();
 	}
