@@ -1,5 +1,5 @@
 {
-  "name": "hope",
+  "name": "client",
   "type": "project:application",
   "bundler": {
     "id": "cli",
@@ -49,12 +49,14 @@
             "name": "aurelia-fetch-client",
             "path": "../node_modules/aurelia-fetch-client/dist/amd",
             "main": "aurelia-fetch-client"
-          },
-          {
-            "name": "regenerator-runtime",
-            "path": "../node_modules/regenerator-runtime",
-            "main": "runtime"
-          },
+            }, 
+            {
+              "name": "regenerator-runtime",
+              "path": "../node_modules/regenerator-runtime",
+              "main": "runtime"
+              },
+                                                                                                                                       
+            
           "aurelia-bootstrapper",
           "aurelia-loader-default",
           "aurelia-pal-browser",

@@ -13,16 +13,16 @@ export class App {
         name: 'Home'
       },
       {
-        route: 'users',
-        moduleId: './modules/users',
-        name: ' Users'
+        route: 'foos',
+        moduleId: './modules/foos',
+        name: ' Foos'
       }
-  //     // {
-  //     //   route: 'users',
-  //     //   moduleId: './modules/users',
-  //     //   name: ' Users'
-  //     // }
-     ]);
-   }
+      // {
+      //   route: 'users',
+      //   moduleId: './modules/users',
+      //   name: ' Users'
+      // }
+    ]);
+  }
 }
 

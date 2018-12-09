@@ -114,6 +114,31 @@
             "date": 1544259628112,
             "name": "log\\application-2018-12-08-03.log",
             "hash": "e8d2edc9aca7b029e875d43b2fea7c45"
+        },
+        {
+            "date": 1544289244129,
+            "name": "log\\application-2018-12-08-11.log",
+            "hash": "b30b56afd1903f55009b36689911ab3e"
+        },
+        {
+            "date": 1544376519906,
+            "name": "log\\application-2018-12-09-11.log",
+            "hash": "583d7ab1ef5b6718119ddf8836f6ec59"
+        },
+        {
+            "date": 1544379146893,
+            "name": "log\\application-2018-12-09-12.log",
+            "hash": "02de25198f4e2a682be0a280e096d929"
+        },
+        {
+            "date": 1544383404085,
+            "name": "log\\application-2018-12-09-13.log",
+            "hash": "0aa2e66381fe3f02c9733b6e02354b59"
+        },
+        {
+            "date": 1544385600271,
+            "name": "log\\application-2018-12-09-14.log",
+            "hash": "1f60f2e27492ea9c9d10e849f2a5e7ce"
         }
     ]
 }
