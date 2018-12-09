@@ -39,17 +39,16 @@ export class Foos {
 
 	openEditForm() {
 		this.showFooEditForm = true;
-		setTimeout(() => { $("#firstName").focus(); }, 500);
+		setTimeout(() => { $("#foo").focus(); }, 500);
 
 	}
-	changeActive(foo) {
-		this.foo = foo;
-		this.save();
-	}
+	// changeActive(foo) {
+	// 	this.foo = foo;
+	// 	this.save();
+	// }
 
 	async save() {
-		if (this.foo && this.foo.firstName && this.user.lastName
-			&& this.foo.email && this.foo.password)
+		if (this.foo && this.foo.foo && this.foo.woo)
 			await this.foos.saveFoo(this.foo);
 		await this.getFoos();
 		this.back();
