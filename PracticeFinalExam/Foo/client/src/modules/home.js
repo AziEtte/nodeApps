@@ -9,7 +9,7 @@ export class Home {
   }
 
   login(){
-	  this.router.navigate('users');
+	  this.router.navigate('foos');
   }
 }
 
