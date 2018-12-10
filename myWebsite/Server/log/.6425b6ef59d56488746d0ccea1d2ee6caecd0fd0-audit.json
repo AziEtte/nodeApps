@@ -94,6 +94,21 @@
             "date": 1544408146788,
             "name": "log\\error-2018-12-09-20.log",
             "hash": "9f6a21f4e693dcbef1600b715f728860"
+        },
+        {
+            "date": 1544464539036,
+            "name": "log\\error-2018-12-10-11.log",
+            "hash": "03529fe0dcb4539eb4acd02ffb447602"
+        },
+        {
+            "date": 1544468314369,
+            "name": "log\\error-2018-12-10-12.log",
+            "hash": "cbb5e5f34526eb12238dd3891857954f"
+        },
+        {
+            "date": 1544472233111,
+            "name": "log\\error-2018-12-10-14.log",
+            "hash": "a67e1b8a7e1cae1cc48ba3c75c1d201d"
         }
     ]
 }
