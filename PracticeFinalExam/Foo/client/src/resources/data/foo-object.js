@@ -6,7 +6,7 @@ import { DataServices } from './data-services';
 export class Foo {
     constructor(data) {
         this.data = data;
-        this.FOO_SERVICE = 'foos';
+        this.FOO_SERVICE = 'foo';
     }
 
     async saveFoo(foo) {
@@ -29,7 +29,7 @@ export class Foo {
         
         
 
-    async getFoos() {
+    async getFoo() {
         let response = await this.data.get(this.FOO_SERVICE);
         if (!response.error) {
             this.foosArray = response;

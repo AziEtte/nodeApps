@@ -4,24 +4,24 @@ import { Router } from 'aurelia-router';
 import { Foo } from '../resources/data/foo-object';
 
 @inject(Router, Foo)
-export class Foos {
-	constructor(router, foos) {
+export class Foo {
+	constructor(router, foo) {
 		this.router = router;
-		this.foos = foos;
-		this.message = 'Foos';
+		this.foo = foo;
+		this.message = 'Foo';
 		this.showFooEditForm = false;
 	}
 
 	async activate() {
-		await this.getFoos();
+		await this.getFoo();
 	}
 
 	attached() {
 		feather.replace()
 	}
 
-	async getFoos() {
-		await this.foos.getFoos();
+	async getFoo() {
+		await this.foo.getFoo();
 	}
 
 	newFoo() {
@@ -49,16 +49,16 @@ export class Foos {
 
 	async save() {
 		if (this.foo && this.foo.foo && this.foo.woo)
-			await this.foos.saveFoo(this.foo);
-		await this.getFoos();
+			await this.foo.saveFoo(this.foo);
+		await this.getFoo();
 		this.back();
 
 	}
 
 	async delete() {
 		if (this.foo) {
-			await this.foos.delete(this.foo);
-			await this.getFoos();
+			await this.foo.delete(this.foo);
+			await this.getFoo();
 			this.back();
 		}
 	}
