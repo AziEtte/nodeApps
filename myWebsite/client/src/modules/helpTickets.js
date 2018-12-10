@@ -3,7 +3,7 @@ import { Router } from 'aurelia-router';
 import { HelpTicket } from '../resources/data/helpTicket-object';
 
 @inject(Router, HelpTicket)
-export class HelpTicket {
+export class HelpTicketr {
 
 
 constructor(helpTicket){
