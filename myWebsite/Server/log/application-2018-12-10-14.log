@@ -2,3 +2,5 @@
 {"level":"info","message":"Starting application"}
 {"level":"info","message":"HTTP Server listening on port: %d, in %s mode"}
 {"level":"info","message":"Mongoose connected to the database"}
+{"level":"info","message":"Get all users"}
+{"level":"info","message":"Get all users"}
