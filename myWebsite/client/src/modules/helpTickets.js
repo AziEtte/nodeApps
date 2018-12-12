@@ -3,17 +3,27 @@ import { Router } from 'aurelia-router';
 import { HelpTicket } from '../resources/data/helpTicket-object';
 
 @inject(Router, HelpTicket)
-export class HelpTicketr {
+export class HelpTickets {
 
 
-    constructor(helpTicket) {
-        this.helpTickets = helpTicket;
+    constructor(router, helpTickets) {
+        this.router = router;
+        this.helpTickets = helpTickets;
+        this.message = 'HelpTickets';
         this.showHelpTicketEditForm = false;
         this.userObj = JSON.parse(sessionStorage.getItem('userObj'));
     }
     async activate() {
         await this.helpTickets.getHelpTickets(this.userObj);
     }
+
+    attached() {
+		feather.replace()
+    }
+    
+    async getHelpTickets() {
+		await this.users.getHelpTickets();
+	}
 
     newHelpTicket() {
         this.helpTicket = {
@@ -34,25 +44,19 @@ export class HelpTicketr {
             personId: this.userObj._id,
             content: ""
         };
+
         await this.helpTickets.getHelpTicketsContents(helpTicket._id)
         this.showEditForm();
     }
 
-    back() {
-        this.showHelpTicketEditForm = false;
-        this.showHelpTicketDisplayForm = false;
-        this.filesToUpload = new Array();
-        this.files = new Array();
+    showEditForm() {
+        this.showHelpTicketEditForm = true;
+        setTimeout(() => { $("#title").focus(); }, 500);
     }
-    changeFiles() {
-        this.filesToUpload = this.filesToUpload ? this.filesToUpload : new Array();
-        for (var i = 0; i < this.files.length; i++) {
-            let addFile = true;
-            this.filesToUpload.forEach(item => {
-                if (item.name === this.files[i].name) addFile = false;
-            })
-            if (addFile) this.filesToUpload.push(this.files[i]);
-        }
+
+    changeActive(helpTicket) {
+        this.helpTicket = helpTicket;
+        this.save();
     }
 
     async save() {
@@ -69,4 +73,34 @@ export class HelpTicketr {
         }
     }
 
+    async delete() {
+        if (this.helpTicket) {
+            await this.helpTickets.delete(this.helpTicket);
+            await this.getHelpTickets();
+            this.back();
+        }
+    }
+
+    back() {
+        this.showHelpTicketEditForm = false;
+        this.showHelpTicketDisplayForm = false;
+        this.filesToUpload = new Array();
+        this.files = new Array();
+    }
+
+    logout() {
+        this.router.navigate('home');
+      }
+      
+    changeFiles() {
+        this.filesToUpload = this.filesToUpload ? this.filesToUpload : new Array();
+        for (var i = 0; i < this.files.length; i++) {
+            let addFile = true;
+            this.filesToUpload.forEach(item => {
+                if (item.name === this.files[i].name) addFile = false;
+            })
+            if (addFile) this.filesToUpload.push(this.files[i]);
+        }
+    }
+   
 }

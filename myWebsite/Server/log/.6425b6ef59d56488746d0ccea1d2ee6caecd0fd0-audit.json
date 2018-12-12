@@ -129,6 +129,21 @@
             "date": 1544492497719,
             "name": "log\\error-2018-12-10-19.log",
             "hash": "632d53e2c3e109a6ff0962d5463edf1e"
+        },
+        {
+            "date": 1544578383799,
+            "name": "log\\error-2018-12-11-19.log",
+            "hash": "dd16fe1f507efed4f67094ab8e5fc76c"
+        },
+        {
+            "date": 1544627167016,
+            "name": "log\\error-2018-12-12-09.log",
+            "hash": "19e4ba4a3aa9f05f38c235cf2e6b88bc"
+        },
+        {
+            "date": 1544657465790,
+            "name": "log\\error-2018-12-12-17.log",
+            "hash": "b018d1afeb4c3b0372764dc9d9f22065"
         }
     ]
 }

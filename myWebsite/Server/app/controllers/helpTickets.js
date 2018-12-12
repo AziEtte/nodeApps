@@ -3,11 +3,11 @@ var express = require('express'),
     router = express.Router(),
     logger = require('../../config/logger'),
     mongoose = require('mongoose');
-HelpTicket = mongoose.model('HelpTicket');
-HelpTicketContent = mongoose.model('HelpTicketContent');
-multer = require('multer');
-mkdirp = require('mkdirp');
-asyncHandler = require('express-async-handler');
+    HelpTicket = mongoose.model('HelpTicket');
+    HelpTicketContent = mongoose.model('HelpTicketContent');
+    multer = require('multer');
+    mkdirp = require('mkdirp');
+    asyncHandler = require('express-async-handler');
 
 
 module.exports = function (app, config) {
@@ -63,23 +63,23 @@ module.exports = function (app, config) {
     }));
 
     router.put('/helpTickets', asyncHandler(async (req, res) => {
-                logger.log('info', 'Updating HelpTicket');
-                await HelpTicket.findOneAndUpdate({ _id: req.body.helpTicket._id }, req.body.helpTicket, { new: true })
-                    .then(result => {
-                        if (req.body.content) {
-                            req.body.content.helpTicketId = result._id;
-                            var helpTicketContent = new HelpTicketContent(req.body.content);
-                            helpTicketContent.save()
-                                .then(content => {
-                                    res.status(201).json({contentID: content._id});
-                                })
-                        } else {
-                            res.status(200).json(result);
-                        }
-                    })
-            }));
-        
-        
+        logger.log('info', 'Updating HelpTicket');
+        await HelpTicket.findOneAndUpdate({ _id: req.body.helpTicket._id }, req.body.helpTicket, { new: true })
+            .then(result => {
+                if (req.body.content) {
+                    req.body.content.helpTicketId = result._id;
+                    var helpTicketContent = new HelpTicketContent(req.body.content);
+                    helpTicketContent.save()
+                        .then(content => {
+                            res.status(201).json({ contentID: content._id });
+                        })
+                } else {
+                    res.status(200).json(result);
+                }
+            })
+    }));
+
+
     router.delete('/helpTickets/:id', asyncHandler(async (req, res) => {
         logger.log('info', 'Deleting helpTicket %s', req.params.id);
         await HelpTicket.remove({ _id: req.params.id })
