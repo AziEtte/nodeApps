@@ -5,7 +5,6 @@ import { HelpTicket } from '../resources/data/helpTicket-object';
 @inject(Router, HelpTicket)
 export class HelpTickets {
 
-
     constructor(router, helpTickets) {
         this.router = router;
         this.helpTickets = helpTickets;

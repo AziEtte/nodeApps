@@ -1,18 +1,6 @@
 var Mongoose = require('mongoose');
 var Schema = Mongoose.Schema;
 
-var HelpTicketContentSchema = new Schema({
-
-    personId: { type: Schema.Types.ObjectId },
-    content: { type: String },
-    dateCreated: { type: Date, default: Date.now },
-    helpTicketId: { type: Schema.Types.ObjectId },
-    file: {
-        fileName: { type: String },
-        originalFileName: { type: String }
-    }
-});
-module.exports = Mongoose.model('HelpTicketContent', HelpTicketContentSchema);
 
 var HelpTicketSchema = new Schema({
 
@@ -23,3 +11,15 @@ var HelpTicketSchema = new Schema({
     dateCreated: { type: Date, default: Date.now }
 });
 module.exports = Mongoose.model('HelpTicket', HelpTicketSchema);
+
+var HelpTicketContentSchema = new Schema({
+    personId: { type: Schema.Types.ObjectId },
+    content: { type: String },
+    dateCreated: { type: Date, default: Date.now },
+    helpTicketId: { type: Schema.Types.ObjectId },
+    file: {
+        fileName: { type: String },
+        originalFileName: { type: String }
+    }
+});
+module.exports = Mongoose.model('HelpTicketContent', HelpTicketContentSchema);
