@@ -3,12 +3,12 @@ import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import { Foo } from '../resources/data/foo-object';
 
-@inject(Router, Foo)
-export class Foo {
+@inject(Router, Foos)
+export class Foos {
 	constructor(router, foo) {
 		this.router = router;
 		this.foo = foo;
-		this.message = 'Foo';
+		this.message = 'Foos';
 		this.showFooEditForm = false;
 	}
 

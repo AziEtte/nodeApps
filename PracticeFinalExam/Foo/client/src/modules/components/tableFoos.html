@@ -18,9 +18,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr repeat.for="foo of foos.foosArray">
-                            <td click.trigger="editFoo(foo)">${Foo.foo}</td>
-                            <td click.trigger="editFoo(woo)">${Foo.woo}</td>
+                        <tr repeat.for="foo of foo.foosArray">
+                            <td click.trigger="editFoo(foo)">${foo.foo}</td>
+                            <td click.trigger="editFoo(woo)">${foo.woo}</td>
 
                             <!-- <td>
                                 <div class="form-check">
