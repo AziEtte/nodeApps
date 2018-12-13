@@ -6,14 +6,14 @@ import { DataServices } from './data-services';
 export class HelpTicket {
     constructor(data) {
         this.data = data;
-        this.HELPTICKET_SERVICE = 'helptickets';
+        this.HELP_TICKET_SERVICE = 'helptickets';
     }
 
     async getHelpTickets(userObj) {
         let url = this.HELP_TICKET_SERVICE;
-        if (userObj.role == 'user') {
-            url += '/user/' + userObj._id;
-        }
+        // if (userObj.role == 'user') {
+        //     url += '/user/' + userObj._id;
+        // }
         let response = await this.data.get(url);
         if (!response.error) {
             this.helpTicketsArray = response;
