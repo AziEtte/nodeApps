@@ -1,0 +1,77 @@
+<template>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+
+                <div class="list-group-item">
+                    <span click.trigger="backReview()"><i data-feather="arrow-left-circle"></i></span>
+                    <span click.trigger="saveReview()" style="margin-left:5px;"><i data-feather="save"></i></span>
+                </div>
+                <form>
+                    <div class="form-group" style="margin-top:20px;">
+                        <h2>${product.productName}</h2>
+                        <!-- <div class="form-group">
+                            <label for="productName">Product Name</label>
+                            <input type="text" class="form-control" value.bind="product.productName" id="productName"
+                                placeholder="Product Name">
+                        </div> -->
+                        <!-- <div class="form-group">
+                            <label for="userName">User ID</label>
+                            <input type="text" class="form-control" value.bind="userName" id="userName" placeholder="Description">
+                        </div> -->
+                        <a href="${product.url}">${product.url}</a>
+                        <!-- <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="text" class="form-control" value.bind="product.url" id="url" placeholder="URL">
+                        </div> -->
+                        <div class="row">
+                            <img src="/${product.image}"
+                            
+                            <div class="form-group" style="margin-top:20px;">
+                                <label for="review">ProductReview</label>
+                                <textarea value.bind="productReview.review" class="form-control" rows="8"></textarea>
+                            </div> 
+
+                            <div class="col-2">
+                                <label class="btn btn-primary">
+                                    Browse for files&hellip; <input type="file" style="display: none;" change.delegate="changeFiles()"
+                                        files.bind="files">
+                                </label>
+                            </div>
+                            <div class="col-10">
+                                <ul>
+                                    <li repeat.for="file of filesToUpload" class="list-group-item">${file.name}<span
+                                            click.delegate="removeFile($index)" class="pull-right"></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <br>
+            
+
+                         <div class="card" repeat.for="review of products.reviewsArray">
+                            <div class="card-body">
+                                <div class="row" style="padding:3px;">
+                                    <div class="col-3">
+                                        <span innerhtml.bind="review.dateCreated | formatDate"></span><br />
+                                        ${review.productid.productName} ${review.userid}
+                                    </div>
+
+                                    <div class="col-9" style="border-left-style: solid; border-left-width: 1px;">
+                                        ${review.review}
+                                    </div>
+                                    <div>
+                                        <a href="http://localhost:5000/uploadedFiles/products/${Review.file.fileName}"
+                                            target="_blank">${review.file.originalFileName}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+</template>
