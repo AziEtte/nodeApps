@@ -1,0 +1,41 @@
+<template>
+    <div class="container-fluid">
+        <div class="row justify-content-left">
+            <div class="col-12">
+        
+                <br></br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="5">                                    
+                                <span click.trigger="newProduct()"><i data-feather="plus"></i></span>
+                                <span click.trigger="getProducts()" style="margin-left:5px;"><i data-feather="refresh-cw"></i></span>
+                            </th>
+                        </tr>
+
+                        <thead class="thead-dark">
+                            <tr >
+                                <th scope="col">Image</th>
+                                <th scope="col">See Reviews</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">URL</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr repeat.for="product of products.productsArray">
+                                <td img src="http://localhost:5000/uploadedFiles/products/${product.productImage.imageName}" target="_blank" ${review.file.originalFileName}></td>
+                                <td click.trigger="getProductReviews(product)"><i data-feather="star"></i></td> 
+                                <td click.trigger="editProduct(product)">${product.productName}</td>
+                                <td click.trigger="editProduct(product)">${product.description}</td>
+                                <td class="dont-break-out" click.trigger="editProduct(product)">${product.url}</td>     
+                              
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</template>

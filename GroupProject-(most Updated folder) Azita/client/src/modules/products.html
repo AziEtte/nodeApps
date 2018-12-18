@@ -1,0 +1,13 @@
+<template>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9dSJ28naLQz-lYeo1ejkNsZ8DpT3tP4HxynLE5XtwrNQdIQ6-Dg');
+            background-size: cover
+        }
+    </style>
+    <h1>${message}</h1>
+    <compose show.bind="showProductEditForm == 'table'" view="./components/tableProducts.html"></compose>
+    <compose show.bind="showProductEditForm == 'form'" view="./components/editProduct.html"></compose>
+    <compose show.bind="showProductEditForm == 'review'" view="./components/editReview.html"></compose>
+    <!-- <compose show.bind="showProductEditForm == 'file'" view="../public/uploadedFiles/products"></compose> -->
+</template>
