@@ -9,7 +9,9 @@ var config = {
               app: { name: 'NodeApps/myWebsite' },
               port: 5000,
               db: 'mongodb://127.0.0.1/helpMe-dev',
-              uploads: './public/uploadedFiles'
+              uploads: './public/uploadedFiles',
+              secret: "cayennedlikedhistreats"
+
        },
 
        test: {
@@ -17,7 +19,8 @@ var config = {
               app: { name: 'NodeApps/myWebsite' },
               port: 4000,
               db: 'mongodb://127.0.0.1/helpMe-test',
-              uploads: './public/uploadedFiles'
+              uploads: './public/uploadedFiles',
+              secret: "cayennedlikedhistreats"
 
        },
 
@@ -26,7 +29,9 @@ var config = {
               app: { name: 'NodeApps/myWebsite' },
               port: 80,
               db: 'mongodb://127.0.0.1/helpMe',
-              uploads: './public/uploadedFiles'
+              uploads: './public/uploadedFiles',
+              secret: "cayennedlikedhistreats"
+
        }
 };
 
