@@ -17,8 +17,8 @@ export class NavBar {
     bind() {
         this.isAuthenticated = this.auth.isAuthenticated();
     }
-    
-    
+
+
     attached() {
         $('.navbar-nav a').on('click', function () {
             $('.navbar-nav').find('li.active').removeClass('active');
@@ -53,11 +53,11 @@ export class NavBar {
     //     this.authenticated = false;
     //     this.router.navigate('landing');
     // }
-    logout(){
-        if (this.userObj) this.auth.logout(this.userObj.email);
+    logout() {
+        this.auth.logout();
         sessionStorage.removeItem('user');
         this.isAuthenticated = this.auth.isAuthenticated();
-        this.auth.logout();
-        }
         
+    }
+
 }

@@ -34,7 +34,7 @@
                         </div>
                     </div>
 
-                    <div class="card" repeat.for="content of helpTickets.helpTicketsContentsArray">
+                    <div show.bind="helpTickets.helpTicketContentsArray.length" class="card" repeat.for="content of helpTickets.helpTicketContentsArray">
                         <div class="card-body">
                             <div class="row" style="padding:3px;">
                                 <div class="col-3">

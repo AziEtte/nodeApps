@@ -32,7 +32,7 @@ router.get('/users/:id', requireAuth, asyncHandler(async (req, res) => {
     })
 }));
 
-router.post('/users', requireAuth, asyncHandler(async (req, res) => {
+router.post('/users',  asyncHandler(async (req, res) => {
     logger.log('info', 'Creating user');
     var user = new User(req.body);
     await user.save()

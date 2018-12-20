@@ -21,7 +21,7 @@ export class HelpTickets {
     }
     
     async getHelpTickets() {
-		await this.users.getHelpTickets();
+		await this.helpTickets.getHelpTickets(this.userObj);
 	}
 
     newHelpTicket() {
@@ -35,6 +35,7 @@ export class HelpTickets {
             personId: this.userObj._id,
             content: ""
         };
+        this.helpTickets.helpTicketContentsArray = [];
         this.showEditForm();
     }
     async editHelpTicket(helpTicket) {

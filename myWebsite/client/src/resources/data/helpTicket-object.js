@@ -7,6 +7,7 @@ export class HelpTicket {
     constructor(data) {
         this.data = data;
         this.HELP_TICKET_SERVICE = 'helptickets';
+        this.HELP_TICKET_CONTENT_SERVICE = 'helpTicketContents';
     }
 
     async getHelpTickets(userObj) {
@@ -36,6 +37,20 @@ export class HelpTicket {
 
     async uploadFile(files, id) {
         await this.data.uploadFiles(files, this.HELP_TICKET_CONTENT_SERVICE + "/upload/" + id);
+    }
+
+    async getHelpTicketsContents(id){
+        let url = this.HELP_TICKET_CONTENT_SERVICE + '/helpTicket/' + id;
+        let response = await this.data.get(url);
+        if (!response.error) {
+            this.helpTicketContentsArray = response;
+        } else {
+            this.helpTicketContentsArray = [];
+        }
+    }
+
+    async delete(helpTicket){
+        await this.data.delete(this.HELP_TICKET_SERVICE + '/' + helpTicket._id)
     }
 
 }
